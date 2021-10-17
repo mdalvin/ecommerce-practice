@@ -16,6 +16,9 @@ export default makeStyles((theme) => ({
     alignItems: 'center',
     display: 'flex',
     textDecoration: 'none',
+    fontFamily: 'PT Sans',
+    fontWeight: '700',
+    color: '#DE6AAF'
   },
   image: {
     marginRight: '10px',

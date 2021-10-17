@@ -1,5 +1,6 @@
 import React from "react";
-import { Container, Typography, Button, Grid } from "@material-ui/core";
+import { Container, Typography, Button, Grid, Divider } from "@material-ui/core";
+import { RemoveShoppingCart, CheckCircle } from '@material-ui/icons';
 import useStyles from "./styles";
 import CartItem from './CartItem/CartItem';
 import { Link } from 'react-router-dom';
@@ -11,7 +12,7 @@ const Cart = ({ cart, handleUpdateQty, handleRemoveFromCart, handleEmptyCart }) 
   const classes = useStyles();
 
   const EmptyCart = () => (
-    <Typography variant="subtitle1">
+    <Typography variant="subtitle1" className={classes.text}>
       You haven't added anything to your shopping cart. 
       <Link to="/" className={classes.link}> Start adding some</Link>!
     </Typography>
@@ -27,7 +28,7 @@ const Cart = ({ cart, handleUpdateQty, handleRemoveFromCart, handleEmptyCart }) 
           ))}
         </Grid>
         <div className={classes.cardDetails}>
-          <Typography variant="h4">
+          <Typography variant="h6" className={classes.text}>
             Subtotal: {cart.subtotal.formatted_with_symbol}
           </Typography>
           <div>
@@ -39,7 +40,7 @@ const Cart = ({ cart, handleUpdateQty, handleRemoveFromCart, handleEmptyCart }) 
               color="secondary"
               onClick={handleEmptyCart}
             >
-              Empty Cart
+              <RemoveShoppingCart />
             </Button>
             <Button
               className={classes.checkoutButton}
@@ -50,7 +51,7 @@ const Cart = ({ cart, handleUpdateQty, handleRemoveFromCart, handleEmptyCart }) 
               component={Link}
               to="/checkout"
             >
-              Checkout
+              <CheckCircle />
             </Button>
           </div>
         </div>
@@ -62,9 +63,11 @@ const Cart = ({ cart, handleUpdateQty, handleRemoveFromCart, handleEmptyCart }) 
   return (
     <Container>
       <div className={classes.toolbar} />
-      <Typography variant="h3" className={classes.title} gutterBottom>
+      <Typography variant="h6" className={classes.title} gutterBottom>
         Your Shopping Cart
       </Typography>
+      <Divider />
+      <br />
       {!cart.line_items.length ? <EmptyCart /> : <FilledCart />}
     </Container>
   );

@@ -9,7 +9,7 @@ import {
 import { ShoppingCart } from "@material-ui/icons";
 import { Link, useLocation } from "react-router-dom";
 
-import logo from "../../assets/shopping-cart.png";
+import logo from "../../assets/kahliilogo.jpg";
 import useStyles from "./styles.js";
 
 const Navbar = ({ totalItems }) => {
@@ -33,10 +33,10 @@ const Navbar = ({ totalItems }) => {
               height="25px"
               className={classes.image}
             />
-            Kahlii
+            Kahlii Book Store
           </Typography>
           <div className={classes.grow} />
-          {location.pathname == "/" && (
+          {location.pathname === "/" && (
             <div>
               <IconButton
                 component={Link}
@@ -44,7 +44,7 @@ const Navbar = ({ totalItems }) => {
                 aria-label="Show cart items"
                 color="inherit"
               >
-                <Badge badgeContent={totalItems} color="secondary">
+                <Badge badgeContent={totalItems} color="secondary" >
                   <ShoppingCart />
                 </Badge>
               </IconButton>

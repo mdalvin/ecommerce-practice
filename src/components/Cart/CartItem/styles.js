@@ -8,8 +8,13 @@ export default makeStyles(() => ({
     display: 'flex',
     justifyContent: 'space-between',
   },
+  text: {
+    fontFamily: 'PT Sans',
+  },
   cartActions: {
-    justifyContent: 'space-between',
+    display: 'flex',
+    width: '100%',
+    justifyContent: 'space-evenly',
   },
   buttons: {
     display: 'flex',

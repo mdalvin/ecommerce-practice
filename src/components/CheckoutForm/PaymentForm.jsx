@@ -68,7 +68,7 @@ const PaymentForm = ({
     <>
       <Review checkoutToken={checkoutToken} />
       <Divider />
-      <Typography variant="h6" gutterBottom style={{ margin: "20px 0" }}>
+      <Typography variant="h6" gutterBottom style={{ margin: "20px 0", fontFamily:"PT Sans" }}>
         Payment method
       </Typography>
       <Elements stripe={stripePromise}>
@@ -79,7 +79,7 @@ const PaymentForm = ({
               <br />
               <br />
               <div style={{ display: "flex", justifyContent: "space-between" }}>
-                <Button variant="outlined" onClick={backStep}>
+                <Button variant="outlined" onClick={backStep} style={{fontFamily:"PT Sans"}}>
                   Back
                 </Button>
                 <Button
@@ -87,6 +87,7 @@ const PaymentForm = ({
                   type="submit"
                   disabled={!stripe}
                   color="primary"
+                  style={{fontFamily:"PT Sans"}}
                 >
                   Pay {checkoutToken.live.subtotal.formatted_with_symbol}
                 </Button>

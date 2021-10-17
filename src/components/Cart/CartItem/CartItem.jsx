@@ -7,6 +7,7 @@ import {
   CardContent,
   CardMedia,
 } from "@material-ui/core";
+import { Delete, ArrowDropUp, ArrowDropDown } from '@material-ui/icons';
 import useStyles from "./styles.js";
 
 const CartItem = ({ item, onUpdateQty, onRemoveFromCart }) => {
@@ -21,21 +22,21 @@ const CartItem = ({ item, onUpdateQty, onRemoveFromCart }) => {
         className={classes.media}
       />
       <CardContent className={classes.cardContent}>
-        <Typography variant="h5">{item.name}</Typography>
-        <Typography varian="h4">{item.line_total.formatted_with_symbol}</Typography>
+        <Typography variant="subtitle1" className={classes.text}>{item.name}</Typography>
+        <Typography variant="subtitle1" className={classes.text}>{item.line_total.formatted_with_symbol}</Typography>
       </CardContent>
       <CardActions className={classes.cardActions}>
         <div className={classes.buttons}>
           <Button type="button" size="small" onClick={() => onUpdateQty(item.id, item.quantity - 1)}>
-            -
+            <ArrowDropDown />
           </Button>
-          <Typography>{item.quantity}</Typography>
+          <Typography className={classes.text}>{item.quantity}</Typography>
           <Button type="button" size="small" onClick={() => onUpdateQty(item.id, item.quantity + 1)}>
-            +
+            <ArrowDropUp />
           </Button>
         </div>
         <Button variant="contained" type="button" color="secondary" onClick={() => onRemoveFromCart(item.id)}>
-          Remove
+          <Delete />
         </Button>
       </CardActions>
     </Card>

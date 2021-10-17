@@ -59,28 +59,28 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     order.customer ? (
       <>
         <div>
-          <Typography variant="h5">
+          <Typography variant="h6" className={classes.text}>
             Thank you for your transaction, {order.customer.firstname}{" "}
             {order.customer.lastname}
           </Typography>
           <Divider className={classes.divider} />
-          <Typography variant="subtitle2">
+          <Typography variant="subtitle2" className={classes.text}>
             Order ref: {order.customer_reference}
           </Typography>
         </div>
         <br />
-        <Button component={Link} to="/" variant="outlined" type="button">
+        <Button component={Link} to="/" variant="outlined" type="button" className={classes.text}>
           Back to Home
         </Button>
       </>
     ) : isFinished ? (
       <>
         <div>
-          <Typography variant="h5">Thank you for your transaction</Typography>
+          <Typography variant="h5" className={classes.text}>Thank you for your transaction</Typography>
           <Divider className={classes.divider} />
         </div>
         <br />
-        <Button component={Link} to="/" variant="outlined" type="button">
+        <Button component={Link} to="/" variant="outlined" type="button" className={classes.text}>
           Back to Home
         </Button>
       </>
@@ -94,7 +94,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     <>
       <Typography variant="h5">Error: {error}</Typography>
       <br />
-      <Button component={Link} to="/" variant="outlined" type="button">
+      <Button component={Link} to="/" variant="outlined" type="button" className={classes.text}>
         Back to Home
       </Button>
     </>;
@@ -120,13 +120,13 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
       <div className={classes.toolbar} />
       <main className={classes.layout}>
         <Paper className={classes.paper}>
-          <Typography variant="h4" align="center">
+          <Typography variant="h4" align="center" className={classes.text}>
             Checkout
           </Typography>
-          <Stepper activeStep={activeStep} className={classes.stepper}>
+          <Stepper activeStep={activeStep} className={classes.stepper} >
             {steps.map((step) => (
-              <Step key={step}>
-                <StepLabel>{step}</StepLabel>
+              <Step key={step} >
+                <StepLabel >{step}</StepLabel>
               </Step>
             ))}
           </Stepper>

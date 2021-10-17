@@ -3,10 +3,14 @@ import { makeStyles } from '@material-ui/core/styles';
 export default makeStyles((theme) => ({
   toolbar: theme.mixins.toolbar,
   title: {
-    marginTop: '5%',
+    marginTop: '3%',
+    fontFamily: 'PT Sans',
+  },
+  text: {
+    fontFamily: 'PT Sans',
   },
   emptyButton: {
-    minWidth: '150px',
+    minWidth: 'auto',
     [theme.breakpoints.down('xs')]: {
       marginBottom: '5px',
     },
@@ -15,7 +19,7 @@ export default makeStyles((theme) => ({
     },
   },
   checkoutButton: {
-    minWidth: '150px',
+    minWidth: 'auto',
   },
   link: {
     textDecoration: 'none',

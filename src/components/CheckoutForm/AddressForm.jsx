@@ -89,12 +89,12 @@ const AddressForm = ({ checkoutToken, next }) => {
 
   return (
     <>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6" gutterBottom style={{fontFamily: 'PT Sans'}}>
         Shipping Address
       </Typography>
-      <FormProvider {...methods}>
+      <FormProvider {...methods} style={{fontFamily: 'PT Sans'}}>
         <form onSubmit={methods.handleSubmit((data) => next({...data, shippingCountry, shippingSubdivision, shippingOption}))}>
-          <Grid container spacing={3}>
+          <Grid container spacing={3} style={{fontFamily: 'PT Sans'}}>
             <FormInput name="firstName" label="First name" />
             <FormInput name="lastName" label="Last name" />
             <FormInput name="address1" label="Address" />
@@ -102,42 +102,45 @@ const AddressForm = ({ checkoutToken, next }) => {
             <FormInput name="city" label="City" />
             <FormInput name="zip" label="ZIP / Postal code" />
             <Grid item xs={12} sm={6}>
-              <InputLabel>Shipping Country</InputLabel>
+              <InputLabel style={{fontFamily: 'PT Sans'}}>Shipping Country</InputLabel>
               <Select
                 value={shippingCountry}
                 fullWidth
+                style={{fontFamily: 'PT Sans'}}
                 onChange={(e) => setShippingCountry(e.target.value)}
               >
                 {countries.map((country) => (
-                  <MenuItem key={country.id} value={country.id}>
+                  <MenuItem key={country.id} value={country.id} style={{fontFamily: 'PT Sans'}}>
                     {country.label}
                   </MenuItem>
                 ))}
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel>Shipping Subdivisions</InputLabel>
+              <InputLabel style={{fontFamily: 'PT Sans'}}>Shipping Subdivisions</InputLabel>
               <Select
                 value={shippingSubdivision}
                 fullWidth
+                style={{fontFamily: 'PT Sans'}}
                 onChange={(e) => setShippingSubdivision(e.target.value)}
               >
                 {subdivisions.map((subdivision) => (
-                  <MenuItem key={subdivision.id} value={subdivision.id}>
+                  <MenuItem key={subdivision.id} value={subdivision.id} style={{fontFamily: 'PT Sans'}}>
                     {subdivision.label}
                   </MenuItem>
                 ))}
               </Select>
             </Grid>
             <Grid item xs={12} sm={6}>
-              <InputLabel>Shipping Options</InputLabel>
+              <InputLabel style={{fontFamily: 'PT Sans'}}>Shipping Options</InputLabel>
               <Select
                 value={shippingOption}
                 fullWidth
                 onChange={(e) => setShippingOption(e.target.value)}
+                style={{fontFamily: 'PT Sans'}}
               >
                 {options.map((option) => (
-                  <MenuItem key={option.id} value={option.id}>
+                  <MenuItem key={option.id} value={option.id} style={{fontFamily: 'PT Sans'}}>
                     {option.label}
                   </MenuItem>
                 ))}
@@ -146,10 +149,10 @@ const AddressForm = ({ checkoutToken, next }) => {
           </Grid>
           <br />
           <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <Button component={Link} to="/cart" variant="outlined">
+            <Button component={Link} to="/cart" variant="outlined" style={{fontFamily:"PT Sans"}}>
               Back to cart
             </Button>
-            <Button type="submit" variant="contained" color="primary">
+            <Button type="submit" variant="contained" color="primary" style={{fontFamily:"PT Sans"}}>
               Next
             </Button>
           </div>
